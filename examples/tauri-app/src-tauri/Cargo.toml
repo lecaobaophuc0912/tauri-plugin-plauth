@@ -1,10 +1,10 @@
 [package]
 name = "tauri-app"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+description = "Example Tauri application demonstrating plauth plugin usage"
+authors = ["Phuc Le <lecaobaophuc0912@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/lecaobaophuc0912/tauri-plugin-plauth"
 edition = "2021"
 rust-version = "1.77.2"
 

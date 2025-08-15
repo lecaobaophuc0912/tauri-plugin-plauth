@@ -1,8 +1,27 @@
 {
   "name": "tauri-plugin-plauth-api",
   "version": "0.1.0",
-  "author": "You",
-  "description": "",
+  "author": "Phuc Le <lecaobaophuc@gmail.com>",
+  "description": "Tauri plugin for authentication (PLAUTH) supporting macOS and iOS platforms with ASWebAuthenticationSession",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lecaobaophuc0912/tauri-plugin-plauth.git"
+  },
+  "homepage": "https://github.com/lecaobaophuc0912/tauri-plugin-plauth",
+  "bugs": {
+    "url": "https://github.com/lecaobaophuc0912/tauri-plugin-plauth/issues"
+  },
+  "keywords": [
+    "tauri",
+    "plugin",
+    "authentication",
+    "auth",
+    "oauth",
+    "web-auth",
+    "macos",
+    "ios"
+  ],
   "type": "module",
   "types": "./dist-js/index.d.ts",
   "main": "./dist-js/index.cjs",
