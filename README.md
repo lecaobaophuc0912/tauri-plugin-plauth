@@ -22,7 +22,13 @@ Add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-tauri-plugin-plauth = "0.1.0"
+tauri-plugin-plauth = "1.0.0"
+```
+
+Or use the `cargo add` command:
+
+```bash
+cargo add tauri-plugin-plauth
 ```
 
 ### JavaScript/TypeScript Dependencies
@@ -102,6 +108,61 @@ Initiates an authentication flow using ASWebAuthenticationSession (iOS) or web v
 | Android  | ❌ Not supported | Future implementation      |
 | Linux    | ❌ Not supported | Not planned                |
 | Windows  | ❌ Not supported | Not planned                |
+
+## Known Issues
+
+### Authentication Dialog Shows "(null)" During Development
+
+**Issue:** When running the application in development mode (`cargo tauri dev`), the authentication dialog may display "(null)" instead of the proper application name.
+
+**Cause:** This is a known issue with Tauri development mode where the application metadata is not properly loaded.
+
+**Solutions:**
+
+#### 1. Test with Built Bundle (Recommended)
+
+Build and test the application as a bundle instead of development mode:
+
+```bash
+cd examples/tauri-app
+cargo tauri build
+# Test the built .app bundle or .dmg file
+```
+
+#### 2. Check Tauri Configuration
+
+Ensure your `tauri.conf.json` has the correct `productName`:
+
+```json
+{
+  "productName": "Your App Name",
+  "version": "0.1.0",
+  "identifier": "com.yourcompany.yourapp"
+}
+```
+
+#### 3. Add/Update Info.plist
+
+Create or update `src-tauri/Info.plist` with proper bundle information:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>ITSAppUsesNonExemptEncryption</key>
+  <false/>
+  <key>CFBundleVersion</key>
+  <string>1</string>
+  <key>CFBundleDisplayName</key>
+  <string>Your App Name</string>
+  <key>CFBundleName</key>
+  <string>Your App Name</string>
+</dict>
+</plist>
+```
+
+**Note:** This issue only affects development mode and will not occur in production builds.
 
 ## Development
 
