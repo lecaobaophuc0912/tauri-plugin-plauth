@@ -6,6 +6,16 @@ A Tauri plugin for authentication (PLAUTH) that currently supports **macOS and i
 [![Crates.io](https://img.shields.io/crates/d/tauri-plugin-plauth)](https://crates.io/crates/tauri-plugin-plauth)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Platform Support
+
+| Platform | Status           | Notes                      |
+| -------- | ---------------- | -------------------------- |
+| macOS    | ✅ Full          | Web view integration       |
+| iOS      | ❌ Full          | ASWebAuthenticationSession |
+| Android  | ❌ Not supported | Not planned                |
+| Linux    | ❌ Not supported | Not planned                |
+| Windows  | ❌ Not supported | Not planned                |
+
 ## Features
 
 - **macOS**: Full support with web view integration
@@ -98,16 +108,6 @@ Initiates an authentication flow using ASWebAuthenticationSession (iOS) or web v
 ## Examples
 
 - `examples/tauri-app/` - Example Tauri application demonstrating plugin usage on macOS with **React** frontend
-
-## Platform Support
-
-| Platform | Status           | Notes                      |
-| -------- | ---------------- | -------------------------- |
-| macOS    | ✅ Full          | Web view integration       |
-| iOS      | ❌ Full          | ASWebAuthenticationSession |
-| Android  | ❌ Not supported | Future implementation      |
-| Linux    | ❌ Not supported | Not planned                |
-| Windows  | ❌ Not supported | Not planned                |
 
 ## Known Issues
 
@@ -212,7 +212,7 @@ If you encounter any issues or have questions, please:
 
 ## Changelog
 
-### 0.1.0
+### 1.0.0
 
 - Initial release
 - macOS and iOS support
