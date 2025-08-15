@@ -12,6 +12,8 @@ links = "tauri-plugin-plauth"
 tauri = { version = "2.7.0" }
 serde = "1.0"
 thiserror = "2"
+tauri-swift-runtime = "0.1.2"
 
 [build-dependencies]
 tauri-plugin = { version = "2.3.1", features = ["build"] }
+swift-rs = { version = "1.0.7", features = ["build"] }

@@ -1,8 +1,8 @@
-use tauri::{AppHandle, command, Runtime};
+use tauri::{command, AppHandle, Runtime};
 
 use crate::models::*;
-use crate::Result;
 use crate::PlauthExt;
+use crate::Result;
 
 #[command]
 pub(crate) async fn ping<R: Runtime>(
@@ -10,4 +10,12 @@ pub(crate) async fn ping<R: Runtime>(
     payload: PingRequest,
 ) -> Result<PingResponse> {
     app.plauth().ping(payload)
+}
+
+#[command]
+pub(crate) async fn authenticate<R: Runtime>(
+    app: AppHandle<R>,
+    payload: AuthRequest,
+) -> Result<AuthResponse> {
+    app.plauth().authenticate(payload)
 }

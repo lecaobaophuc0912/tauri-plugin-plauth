@@ -1,11 +1,11 @@
 {
-  "productName": "tauri-app",
+  "productName": "PlAuth",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.plauth.app",
   "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
-    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "yarn dev",
+    "beforeBuildCommand": "yarn build",
+    "devUrl": "http://localhost:1444",
     "frontendDist": "../dist"
   },
   "app": {
@@ -17,9 +17,10 @@
       {
         "fullscreen": false,
         "height": 600,
-        "resizable": true,
         "title": "tauri-app",
-        "width": 800
+        "width": 800,
+        "resizable": true,
+        "maximized": true
       }
     ]
   },
@@ -32,6 +33,9 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "macOS": {
+      "minimumSystemVersion": "13.0"
+    }
   }
 }

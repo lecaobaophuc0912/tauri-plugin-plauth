@@ -20,7 +20,7 @@ export default {
   plugins: [
     typescript({
       declaration: true,
-      declarationDir: dirname(pkg.exports.import)
+      declarationDir: './dist-js'
     })
   ],
   external: [
