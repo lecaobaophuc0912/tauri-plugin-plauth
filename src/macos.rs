@@ -25,7 +25,6 @@ impl<R: Runtime> Plauth<R> {
     }
 
     pub fn authenticate(&self, payload: AuthRequest) -> crate::Result<AuthResponse> {
-        println!("Authenticating with payload: {:?}", payload);
         self.0
             .run_swift_plugin("authenticate", payload)
             .map_err(Into::into)
