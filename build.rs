@@ -9,7 +9,7 @@ fn main() {
         .ios_path("ios")
         .build();
 
-    // Handle macOS Swift linking
+    // Handle macOS Swift linking only when building for macOS target
     if std::env::var("CARGO_CFG_TARGET_OS").unwrap().as_str() == "macos" {
         println!("Building plugin for macOS");
 
