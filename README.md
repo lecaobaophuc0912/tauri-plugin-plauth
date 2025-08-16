@@ -110,6 +110,24 @@ Initiates an authentication flow using ASWebAuthenticationSession (iOS) or web v
 - `examples/tauri-app/` - Example Tauri application demonstrating plugin usage on macOS with **React** frontend
 - iOS support is available through the same plugin interface with ASWebAuthenticationSession integration
 
+## Code Organization & Structure
+
+### Rust Code Structure
+
+- `src/lib.rs` - Main plugin entry point and exports
+- `src/commands.rs` - Tauri command implementations
+- `src/models.rs` - Data structures and types
+- `src/error.rs` - Error handling and custom error types
+- `src/desktop.rs` - macOS-specific implementations
+- `src/mobile.rs` - iOS-specific implementations
+
+### Platform-Specific Code
+
+- `ios/` - iOS-specific Swift code with ASWebAuthenticationSession
+- `macos/` - macOS-specific Swift code with ASWebAuthenticationSession
+- `guest-js/` - JavaScript/TypeScript client code
+- **Note**: Android support is not currently implemented
+
 ## Known Issues
 
 ### Authentication Dialog Shows "(null)" During Development

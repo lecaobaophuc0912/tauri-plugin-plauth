@@ -18,6 +18,9 @@ This is a Tauri plugin for authentication (PLAUTH) that currently supports **mac
 ### Platform-Specific Code
 
 - `ios/` - iOS-specific Swift code with ASWebAuthenticationSession
+  - `ios/Sources/PlauthPlugin.swift` - Main iOS implementation
+  - `ios/Tests/PluginTests/` - iOS unit tests
+  - `ios/Package.swift` - Swift package configuration
 - `guest-js/` - JavaScript/TypeScript client code
 - **Note**: Android support is not currently implemented
 
@@ -44,6 +47,12 @@ ios/ (Swift implementations with ASWebAuthenticationSession)
     ↓
 build.rs (Command registration)
 ```
+
+**iOS Implementation Structure:**
+
+- `ios/Sources/PlauthPlugin.swift` - Main plugin implementation
+- `ios/Tests/PluginTests/` - Unit tests
+- `ios/Package.swift` - Swift package configuration
 
 #### Mandatory Synchronization Checklist
 
@@ -81,6 +90,9 @@ You MUST verify and update ALL of the following:
 4. **Native Implementations**
 
    - **iOS (`ios/`)**: Swift structs, function signatures, ASWebAuthenticationSession integration
+     - `ios/Sources/PlauthPlugin.swift` - Main implementation
+     - `ios/Tests/PluginTests/` - Test coverage
+     - `ios/Package.swift` - Package configuration
 
 5. **Build Configuration (`build.rs`)**
 
@@ -237,6 +249,7 @@ pub async fn command_name(
 
 - **macOS**: Implement in `src/desktop.rs` with web view integration
 - **iOS**: Implement in `src/mobile.rs` with ASWebAuthenticationSession
+- **iOS Native**: Implement in `ios/Sources/PlauthPlugin.swift` with ASWebAuthenticationSession
 - Use conditional compilation with `#[cfg(target_os = "macos")]` and `#[cfg(target_os = "ios")]`
 
 ### TypeScript/JavaScript Client
@@ -273,6 +286,9 @@ pub async fn command_name(
 ### Platform Configuration
 
 - **iOS**: Maintain `ios/` directory structure with ASWebAuthenticationSession
+  - `ios/Sources/PlauthPlugin.swift` - Main iOS implementation
+  - `ios/Tests/PluginTests/` - iOS unit tests
+  - `ios/Package.swift` - Swift package configuration
 - **macOS**: Ensure proper web view integration
 - Ensure proper permissions and capabilities for authentication
 

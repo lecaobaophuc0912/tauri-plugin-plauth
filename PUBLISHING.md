@@ -10,6 +10,7 @@ This document records the complete build and publishing process for the Tauri Pl
 tauri-plugin-plauth/
 ├── src/                    # Rust source code
 ├── guest-js/              # TypeScript client code
+├── ios/                    # iOS Swift implementation
 ├── macos/                  # macOS Swift implementation
 ├── examples/               # Example applications
 ├── permissions/            # Tauri permissions
@@ -348,6 +349,15 @@ swift-rs = { version = "1.0.7", features = ["build"] }
 - Android support with WebView
 - Cross-platform authentication standards
 - Enhanced iOS/macOS features
+
+### Platform Configuration
+
+- **iOS**: Maintain `ios/` directory structure with ASWebAuthenticationSession
+  - `ios/Sources/PlauthPlugin.swift` - Main iOS implementation
+  - `ios/Tests/PluginTests/` - iOS unit tests
+  - `ios/Package.swift` - Swift package configuration
+- **macOS**: Ensure proper web view integration
+- Ensure proper permissions and capabilities for authentication
 
 ## Security Considerations
 
