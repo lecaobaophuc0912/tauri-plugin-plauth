@@ -18,8 +18,8 @@ A Tauri plugin for authentication (PLAUTH) that currently supports **macOS and i
 
 ## Features
 
-- **macOS**: Full support with web view integration
-- **iOS**: Full support with ASWebAuthenticationSession
+- **macOS**: Full support with web view integration and ASWebAuthenticationSession
+- **iOS**: Full support with ASWebAuthenticationSession and UIKit integration
 - **Android**: Not currently supported
 - **Linux**: Not currently supported
 - **Windows**: Not currently supported
@@ -108,6 +108,7 @@ Initiates an authentication flow using ASWebAuthenticationSession (iOS) or web v
 ## Examples
 
 - `examples/tauri-app/` - Example Tauri application demonstrating plugin usage on macOS with **React** frontend
+- iOS support is available through the same plugin interface with ASWebAuthenticationSession integration
 
 ## Known Issues
 
@@ -170,8 +171,9 @@ Create or update `src-tauri/Info.plist` with proper bundle information:
 
 - Rust 1.77.2+
 - Tauri 2.7.0+
-- Xcode (for iOS development)
+- Xcode (for iOS and macOS development)
 - macOS (for development and testing)
+- iOS Simulator or device (for iOS testing)
 
 ### Building
 

@@ -337,17 +337,17 @@ swift-rs = { version = "1.0.7", features = ["build"] }
 
 ### Current Support
 
-- ✅ **macOS**: Full support with Swift integration
-- ❌ **iOS**: Not implemented (future)
+- ✅ **macOS**: Full support with Swift integration and ASWebAuthenticationSession
+- ✅ **iOS**: Full support with ASWebAuthenticationSession and UIKit integration
 - ❌ **Android**: Not implemented (future)
 - ❌ **Linux**: Not implemented (future)
 - ❌ **Windows**: Not implemented (future)
 
 ### Future Considerations
 
-- iOS support with ASWebAuthenticationSession
 - Android support with WebView
 - Cross-platform authentication standards
+- Enhanced iOS/macOS features
 
 ## Security Considerations
 

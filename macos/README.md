@@ -1,6 +1,6 @@
-# Tauri Plugin PLAUTH - iOS Implementation
+# Tauri Plugin PLAUTH - macOS Implementation
 
-This iOS package implements the PLAUTH authentication plugin for Tauri applications using ASWebAuthenticationSession.
+This macOS package implements the PLAUTH authentication plugin for Tauri applications using ASWebAuthenticationSession.
 
 ## Features
 
