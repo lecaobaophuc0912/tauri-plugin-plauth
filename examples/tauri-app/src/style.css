@@ -1,3 +1,10 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -14,6 +21,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* Ensure responsive behavior */
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
 .container {
   margin: 0;
   padding: 20px;
@@ -23,6 +42,7 @@
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 100%;
 }
 
 .page-content {
@@ -33,6 +53,9 @@
 /* Login Styles */
 .login-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-card {
@@ -42,6 +65,8 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .login-card h2 {
@@ -62,6 +87,7 @@
 /* Google Login Button */
 .google-login-section {
   margin-bottom: 25px;
+  width: 100%;
 }
 
 .google-login-button {
@@ -105,6 +131,7 @@
 /* Submit Button */
 .submit-section {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .submit-button {
@@ -139,6 +166,241 @@
   border-left: 4px solid #667eea;
   color: #333;
   font-size: 14px;
+  width: 100%;
+}
+
+/* Authenticated Section */
+.authenticated-section {
+  text-align: center;
+  width: 100%;
+}
+
+.success-message {
+  font-size: 18px;
+  color: #10b981;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.logout-button {
+  padding: 12px 24px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Mobile Text Styles */
+.mobile-text {
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Tablet Breakpoint */
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .page-content {
+    max-width: 600px;
+  }
+
+  .login-card {
+    padding: 35px 30px;
+  }
+}
+
+/* Mobile Responsive Styles - Main Breakpoint */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .page-content {
+    max-width: 100%;
+  }
+
+  .login-container.mobile {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .login-card.mobile {
+    padding: 30px 20px;
+    border-radius: 16px;
+    margin: 10px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+  }
+
+  .login-card.mobile h2.mobile-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .login-card.mobile .subtitle.mobile-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    color: #666;
+  }
+
+  .google-login-section.mobile {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .google-login-button.mobile {
+    padding: 16px 16px;
+    font-size: 15px;
+    gap: 10px;
+    min-height: 56px;
+    width: 100%;
+    background: white;
+    color: #333;
+    border: 2px solid #e1e5e9;
+    /* Touch-friendly height */
+  }
+
+  .google-icon.mobile {
+    width: 18px;
+    height: 18px;
+  }
+
+  .submit-section.mobile {
+    margin-bottom: 18px;
+    width: 100%;
+  }
+
+  .submit-button.mobile {
+    padding: 16px;
+    font-size: 15px;
+    min-height: 56px;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    /* Touch-friendly height */
+  }
+
+  .message.mobile {
+    padding: 12px;
+    margin: 18px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    width: 100%;
+    background: #f8f9fa;
+    color: #333;
+  }
+
+  .authenticated-section.mobile {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .success-message.mobile {
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: #10b981;
+  }
+
+  .logout-button.mobile {
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 48px;
+    background: #ef4444;
+    color: white;
+    /* Touch-friendly height */
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+
+  .login-card.mobile {
+    padding: 25px 15px;
+    border-radius: 12px;
+  }
+
+  .login-card.mobile h2.mobile-title {
+    font-size: 22px;
+    color: #333;
+  }
+
+  .google-login-button.mobile {
+    padding: 14px 12px;
+    font-size: 14px;
+    background: white;
+    color: #333;
+  }
+
+  .submit-button.mobile {
+    padding: 14px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .message.mobile {
+    padding: 10px;
+    font-size: 12px;
+    background: #f8f9fa;
+    color: #333;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+  .google-login-button,
+  .submit-button,
+  .logout-button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .google-login-button:active,
+  .submit-button:active,
+  .logout-button:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Landscape Mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .login-card.mobile {
+    padding: 20px 25px;
+  }
+
+  .login-card.mobile h2.mobile-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  .login-card.mobile .subtitle.mobile-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #666;
+  }
+
+  .google-login-button.mobile,
+  .submit-button.mobile {
+    min-height: 48px;
+    padding: 12px 16px;
+  }
 }
 
 /* Dark mode */
@@ -170,5 +432,31 @@
   .message {
     background: #4a5568;
     color: #f6f6f6;
+  }
+
+  /* Dark mode mobile adjustments */
+  @media screen and (max-width: 768px) {
+    .login-card.mobile {
+      background: #2d3748;
+    }
+
+    .login-card.mobile h2.mobile-title {
+      color: #f6f6f6;
+    }
+
+    .login-card.mobile .subtitle.mobile-subtitle {
+      color: #e2e8f0;
+    }
+
+    .google-login-button.mobile {
+      background: #4a5568;
+      color: #f6f6f6;
+      border-color: #718096;
+    }
+
+    .message.mobile {
+      background: #4a5568;
+      color: #f6f6f6;
+    }
   }
 }

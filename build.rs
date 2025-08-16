@@ -1,6 +1,12 @@
 const COMMANDS: &[&str] = &["ping", "authenticate"];
 
 fn main() {
+    // Only run this build script when building the plugin itself
+    if std::env::var("CARGO_PKG_NAME").unwrap_or_default() != "tauri-plugin-plauth" {
+        println!("Not building plugin");
+        return;
+    }
+
     println!("Building plugin with commands: {:?}", COMMANDS);
 
     // Build the main plugin

@@ -4,12 +4,12 @@ pub type Result<T> = std::result::Result<T, Error>;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
-    #[error(transparent)]
+#[error(transparent)]
   Io(#[from] std::io::Error),
-  #[cfg(target_os = "android")]
+  #[cfg(mobile)]
   #[error(transparent)]
   PluginInvoke(#[from] tauri::plugin::mobile::PluginInvokeError),
-  #[cfg(any(target_os = "macos", target_os = "ios"))]
+  #[cfg(any(target_os = "macos"))]
   #[error(transparent)]
   PluginInvoke(#[from] tauri_swift_runtime::PluginInvokeError),
 }
