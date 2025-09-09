@@ -9,7 +9,7 @@ pub fn run() {
     println!("Running tauri application");
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
-        .plugin(tauri_plugin_plauth::init())
+        // .plugin(tauri_plugin_plauth::init())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
