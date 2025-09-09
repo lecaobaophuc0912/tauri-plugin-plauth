@@ -7,9 +7,19 @@ fn greet(name: &str) -> String {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     println!("Running tauri application");
-    tauri::Builder::default()
+    let mut builder = tauri::Builder::default();
+    #[cfg(target_os = "ios")]
+    {
+        println!("Building plugin for iOS");
+        builder = builder.plugin(tauri_plugin_plauth::init());
+    }
+    #[cfg(target_os = "macos")]
+    {
+        println!("Building plugin for macOS");
+        builder = builder.plugin(tauri_plugin_plauth::init());
+    }
+    builder
         .invoke_handler(tauri::generate_handler![greet])
-        // .plugin(tauri_plugin_plauth::init())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
