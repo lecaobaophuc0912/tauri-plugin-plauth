@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-plauth"
-version = "1.0.1"
+version = "1.0.2"
 authors = ["Phuc Le <lecaobaophuc@gmail.com>"]
 description = "Tauri plugin for authentication (PLAUTH) supporting macOS and iOS platforms with ASWebAuthenticationSession"
 license = "MIT"
