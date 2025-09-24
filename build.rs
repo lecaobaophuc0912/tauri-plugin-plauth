@@ -16,12 +16,15 @@ fn main() {
         .build();
 
     // Handle macOS Swift linking only when building for macOS target
-    if std::env::var("CARGO_CFG_TARGET_OS").unwrap().as_str() == "macos" {
-        println!("Building plugin for macOS");
+    #[cfg(target_os = "macos")]
+    {
+        if std::env::var("CARGO_CFG_TARGET_OS").map(|v| v == "macos").unwrap_or(false) {
+            println!("Building plugin for macOS");
 
-        // Use swift-rs to link Swift code
-        swift_rs::SwiftLinker::new("13.0")
-            .with_package("tauri-plugin-plauth", "./macos/")
-            .link();
+            // Use swift-rs to link Swift code
+            swift_rs::SwiftLinker::new("13.0")
+                .with_package("tauri-plugin-plauth", "./macos/")
+                .link();
+        }
     }
 }
